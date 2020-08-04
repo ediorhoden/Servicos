@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://mooz.aptuscloud.com.br/rd-api/IE_AD.asmx?wsdl" docRef="https://mooz.aptuscloud.com.br/rd-api/IE_AD.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://mooz.aptuscloud.com.br/rd-api/IE_AD.asmx" xmlns:q1="http://aptuscloud.com.br/rdapi/" binding="q1:ID_ADSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://mooz.aptuscloud.com.br/rd-api/IE_AD.asmx" xmlns:q2="http://aptuscloud.com.br/rdapi/" binding="q2:ID_ADSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

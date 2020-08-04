@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://aptuscloud.com.br/rdapi/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://aptuscloud.com.br/rdapi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://aptuscloud.com.br/rdapi/">
+      <s:element name="AtualizarIntegradoSituacao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoIntegracao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mensagemStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizarIntegradoSituacaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AtualizarIntegradoSituacaoResult" type="tns:IntegracaoEletronica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IntegracaoEletronica">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RelatoriosResumidos" type="tns:ArrayOfRelatorioDespesaResumido" />
+          <s:element minOccurs="0" maxOccurs="1" name="Relatorios" type="tns:ArrayOfRelatorioDespesa" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdiantamentosResumidos" type="tns:ArrayOfAdiantamentoResumido" />
+          <s:element minOccurs="0" maxOccurs="1" name="Adiantamentos" type="tns:ArrayOfAdiantamento" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusRetorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensagemRetorno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TempoProcessamento" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRelatorioDespesaResumido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RelatorioDespesaResumido" nillable="true" type="tns:RelatorioDespesaResumido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelatorioDespesaResumido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataCriacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataEnvio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataPrevisaoPagamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataUltimaAprovacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltimoAprovadorCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltimoAprovadorDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SolicitanteId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SolicitanteCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SolicitanteNome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpresaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpresaCNPJ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpresaCodigoERP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaDescricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorReembolso" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorAdiantamento" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CotacaoIndice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotalIndice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorReembolsoIndice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorAdiantamentoIndice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextoCabecalho" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chave" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelatorioDespesa">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RelatorioDespesaResumido">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UsuarioDetalhe" type="tns:DadosColaborador" />
+              <s:element minOccurs="0" maxOccurs="1" name="SolicitanteDetalhe" type="tns:DadosColaborador" />
+              <s:element minOccurs="0" maxOccurs="1" name="SolicitanteDocumento" type="tns:DadosDocumentos" />
+              <s:element minOccurs="0" maxOccurs="1" name="SolicitanteDadosBancarios" type="tns:DadosBancarios" />
+              <s:element minOccurs="0" maxOccurs="1" name="Lancamentos" type="tns:ArrayOfRelatorioDespesaLancamento" />
+              <s:element minOccurs="0" maxOccurs="1" name="LancamentosContabilidade" type="tns:ArrayOfRelatorioDespesaLancamentoContabil" />
+              <s:element minOccurs="0" maxOccurs="1" name="LancamentosFinanceiro" type="tns:ArrayOfRelatorioDespesaLancamentoFinanceiro" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DadosColaborador">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Cracha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCusto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Unidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnidadeDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SuperiorUsername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilAcesso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilDespesa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataAlteracao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataUltimoAcesso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlagDesligado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlagAtivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FornecedorCodigo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DadosDocumentos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DadosBancarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Banco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Agencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Conta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContaDigito" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRelatorioDespesaLancamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RelatorioDespesaLancamento" nillable="true" type="tns:RelatorioDespesaLancamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelatorioDespesaLancamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDespesa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaDescricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CotacaoIndice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorReembolso" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotalIndice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorReembolsoIndice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="FlagDevolucao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDespesaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoDespesaDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comentarios" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoAutomatica" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeKM" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadePessoas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantidadeDiasHospedagem" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CursoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextoItem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataPrevisaoPagamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lancamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Anexos" type="tns:ArrayOfRelatorioDespesaLancamentoAnexo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRelatorioDespesaLancamentoAnexo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RelatorioDespesaLancamentoAnexo" nillable="true" type="tns:RelatorioDespesaLancamentoAnexo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelatorioDespesaLancamentoAnexo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UrlAnexo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRelatorioDespesaLancamentoContabil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RelatorioDespesaLancamentoContabil" nillable="true" type="tns:RelatorioDespesaLancamentoContabil" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelatorioDespesaLancamentoContabil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Lancamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContaCredito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContaDebito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoIntegracao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnidadeNegocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Historico" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorIndice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaDescricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CotacaoIndice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rateio01" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rateio02" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rateio03" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rateio04" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rateio05" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRelatorioDespesaLancamentoFinanceiro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RelatorioDespesaLancamentoFinanceiro" nillable="true" type="tns:RelatorioDespesaLancamentoFinanceiro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RelatorioDespesaLancamentoFinanceiro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ValorTotal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnidadeNegocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespesaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespesaDescricao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRelatorioDespesa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RelatorioDespesa" nillable="true" type="tns:RelatorioDespesa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdiantamentoResumido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdiantamentoResumido" nillable="true" type="tns:AdiantamentoResumido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdiantamentoResumido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataCriacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataEnvio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataNecssidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataPrevisaoPagamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataUltimaAprovacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltimoAprovadorCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UltimoAprovadorDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SolicitanteCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SolicitanteNome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaDescricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorAdiantamento" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TextoCabecalho" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Adiantamento">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:AdiantamentoResumido">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UsuarioDetalhe" type="tns:DadosColaborador" />
+              <s:element minOccurs="0" maxOccurs="1" name="SolicitanteDetalhe" type="tns:DadosColaborador" />
+              <s:element minOccurs="0" maxOccurs="1" name="SolicitanteDocumento" type="tns:DadosDocumentos" />
+              <s:element minOccurs="0" maxOccurs="1" name="SolicitanteDadosBancarios" type="tns:DadosBancarios" />
+              <s:element minOccurs="0" maxOccurs="1" name="LancamentosContabilidade" type="tns:ArrayOfAdiantamentoLancamentoContabil" />
+              <s:element minOccurs="0" maxOccurs="1" name="LancamentosFinanceiro" type="tns:ArrayOfAdiantamentoLancamentoFinanceiro" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdiantamentoLancamentoContabil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdiantamentoLancamentoContabil" nillable="true" type="tns:AdiantamentoLancamentoContabil" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdiantamentoLancamentoContabil">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContaCredito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContaDebito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnidadeNegocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Historico" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorIndice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MoedaDescricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CotacaoIndice" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdiantamentoLancamentoFinanceiro">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AdiantamentoLancamentoFinanceiro" nillable="true" type="tns:AdiantamentoLancamentoFinanceiro" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AdiantamentoLancamentoFinanceiro">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTotal" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CentroCustoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnidadeNegocio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProjetoDescricao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespesaCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DespesaDescricao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAdiantamento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Adiantamento" nillable="true" type="tns:Adiantamento" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AtualizarIntegracaoSucesso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoIntegracao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizarIntegracaoSucessoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AtualizarIntegracaoSucessoResult" type="tns:IntegracaoEletronica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizarIntegracaoProblema">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="problemaCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="problemaMensagem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AtualizarIntegracaoProblemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AtualizarIntegracaoProblemaResult" type="tns:IntegracaoEletronica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstornarIntegracao">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstornarIntegracaoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstornarIntegracaoResult" type="tns:IntegracaoEletronica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterAdiantamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterAdiantamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterAdiantamentoResult" type="tns:IntegracaoEletronica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterAdiantamentosPendentesResumo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterAdiantamentosPendentesResumoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterAdiantamentosPendentesResumoResult" type="tns:IntegracaoEletronica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterAdiantamentosPendentes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accessKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObterAdiantamentosPendentesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObterAdiantamentosPendentesResult" type="tns:IntegracaoEletronica" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AtualizarIntegradoSituacaoSoapIn">
+    <wsdl:part name="parameters" element="tns:AtualizarIntegradoSituacao" />
+  </wsdl:message>
+  <wsdl:message name="AtualizarIntegradoSituacaoSoapOut">
+    <wsdl:part name="parameters" element="tns:AtualizarIntegradoSituacaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AtualizarIntegracaoSucessoSoapIn">
+    <wsdl:part name="parameters" element="tns:AtualizarIntegracaoSucesso" />
+  </wsdl:message>
+  <wsdl:message name="AtualizarIntegracaoSucessoSoapOut">
+    <wsdl:part name="parameters" element="tns:AtualizarIntegracaoSucessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AtualizarIntegracaoProblemaSoapIn">
+    <wsdl:part name="parameters" element="tns:AtualizarIntegracaoProblema" />
+  </wsdl:message>
+  <wsdl:message name="AtualizarIntegracaoProblemaSoapOut">
+    <wsdl:part name="parameters" element="tns:AtualizarIntegracaoProblemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstornarIntegracaoSoapIn">
+    <wsdl:part name="parameters" element="tns:EstornarIntegracao" />
+  </wsdl:message>
+  <wsdl:message name="EstornarIntegracaoSoapOut">
+    <wsdl:part name="parameters" element="tns:EstornarIntegracaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterAdiantamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterAdiantamento" />
+  </wsdl:message>
+  <wsdl:message name="ObterAdiantamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterAdiantamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterAdiantamentosPendentesResumoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterAdiantamentosPendentesResumo" />
+  </wsdl:message>
+  <wsdl:message name="ObterAdiantamentosPendentesResumoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterAdiantamentosPendentesResumoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObterAdiantamentosPendentesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObterAdiantamentosPendentes" />
+  </wsdl:message>
+  <wsdl:message name="ObterAdiantamentosPendentesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObterAdiantamentosPendentesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ID_ADSoap">
+    <wsdl:operation name="AtualizarIntegradoSituacao">
+      <wsdl:input message="tns:AtualizarIntegradoSituacaoSoapIn" />
+      <wsdl:output message="tns:AtualizarIntegradoSituacaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarIntegracaoSucesso">
+      <wsdl:input message="tns:AtualizarIntegracaoSucessoSoapIn" />
+      <wsdl:output message="tns:AtualizarIntegracaoSucessoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarIntegracaoProblema">
+      <wsdl:input message="tns:AtualizarIntegracaoProblemaSoapIn" />
+      <wsdl:output message="tns:AtualizarIntegracaoProblemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstornarIntegracao">
+      <wsdl:input message="tns:EstornarIntegracaoSoapIn" />
+      <wsdl:output message="tns:EstornarIntegracaoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamento">
+      <wsdl:input message="tns:ObterAdiantamentoSoapIn" />
+      <wsdl:output message="tns:ObterAdiantamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamentosPendentesResumo">
+      <wsdl:input message="tns:ObterAdiantamentosPendentesResumoSoapIn" />
+      <wsdl:output message="tns:ObterAdiantamentosPendentesResumoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamentosPendentes">
+      <wsdl:input message="tns:ObterAdiantamentosPendentesSoapIn" />
+      <wsdl:output message="tns:ObterAdiantamentosPendentesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ID_ADSoap" type="tns:ID_ADSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AtualizarIntegradoSituacao">
+      <soap:operation soapAction="http://aptuscloud.com.br/rdapi/AtualizarIntegradoSituacao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarIntegracaoSucesso">
+      <soap:operation soapAction="http://aptuscloud.com.br/rdapi/AtualizarIntegracaoSucesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarIntegracaoProblema">
+      <soap:operation soapAction="http://aptuscloud.com.br/rdapi/AtualizarIntegracaoProblema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstornarIntegracao">
+      <soap:operation soapAction="http://aptuscloud.com.br/rdapi/EstornarIntegracao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamento">
+      <soap:operation soapAction="http://aptuscloud.com.br/rdapi/ObterAdiantamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamentosPendentesResumo">
+      <soap:operation soapAction="http://aptuscloud.com.br/rdapi/ObterAdiantamentosPendentesResumo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamentosPendentes">
+      <soap:operation soapAction="http://aptuscloud.com.br/rdapi/ObterAdiantamentosPendentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ID_ADSoap12" type="tns:ID_ADSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AtualizarIntegradoSituacao">
+      <soap12:operation soapAction="http://aptuscloud.com.br/rdapi/AtualizarIntegradoSituacao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarIntegracaoSucesso">
+      <soap12:operation soapAction="http://aptuscloud.com.br/rdapi/AtualizarIntegracaoSucesso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AtualizarIntegracaoProblema">
+      <soap12:operation soapAction="http://aptuscloud.com.br/rdapi/AtualizarIntegracaoProblema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstornarIntegracao">
+      <soap12:operation soapAction="http://aptuscloud.com.br/rdapi/EstornarIntegracao" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamento">
+      <soap12:operation soapAction="http://aptuscloud.com.br/rdapi/ObterAdiantamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamentosPendentesResumo">
+      <soap12:operation soapAction="http://aptuscloud.com.br/rdapi/ObterAdiantamentosPendentesResumo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObterAdiantamentosPendentes">
+      <soap12:operation soapAction="http://aptuscloud.com.br/rdapi/ObterAdiantamentosPendentes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ID_AD">
+    <wsdl:port name="ID_ADSoap" binding="tns:ID_ADSoap">
+      <soap:address location="https://mooz.aptuscloud.com.br/rd-api/IE_AD.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ID_ADSoap12" binding="tns:ID_ADSoap12">
+      <soap12:address location="https://mooz.aptuscloud.com.br/rd-api/IE_AD.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
