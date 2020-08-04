@@ -1,0 +1,13 @@
+*--Executar Visual Studio como adminitrador
+
+*--redireciona pasta
+cd C:\Windows\Microsoft.NET\Framework\v4.0.30319
+
+*--instala serviço
+Installutil "G:\Daytona\ServicosOcorrencias\GTIServiceEmailOcorrencias.exe"
+
+*--desisntala serviço
+Installutil /u "G:\Daytona\ServicosOcorrencias\GTIServiceEmailOcorrencias.exe"
+
+
+G:\Daytona\ServicosOcorrencias
