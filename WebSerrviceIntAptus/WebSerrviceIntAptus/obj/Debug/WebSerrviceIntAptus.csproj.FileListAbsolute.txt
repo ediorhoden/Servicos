@@ -5,3 +5,10 @@ D:\Fontes\mooz\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntA
 D:\Fontes\mooz\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntAptus.exe
 D:\Fontes\mooz\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntAptus.pdb
 D:\Fontes\mooz\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntAptus.csprojAssemblyReference.cache
+D:\Fontes\Servi-os\WebSerrviceIntAptus\WebSerrviceIntAptus\bin\Debug\WebSerrviceIntAptus.exe.config
+D:\Fontes\Servi-os\WebSerrviceIntAptus\WebSerrviceIntAptus\bin\Debug\WebSerrviceIntAptus.exe
+D:\Fontes\Servi-os\WebSerrviceIntAptus\WebSerrviceIntAptus\bin\Debug\WebSerrviceIntAptus.pdb
+D:\Fontes\Servi-os\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntAptus.csprojAssemblyReference.cache
+D:\Fontes\Servi-os\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntAptus.csproj.CoreCompileInputs.cache
+D:\Fontes\Servi-os\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntAptus.exe
+D:\Fontes\Servi-os\WebSerrviceIntAptus\WebSerrviceIntAptus\obj\Debug\WebSerrviceIntAptus.pdb

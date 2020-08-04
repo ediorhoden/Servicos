@@ -28,11 +28,8 @@ namespace WebSerrviceIntAptus
                 string CodigoAux = "";
                 string DataVencimento = "";
                 string Cpf = "";
-                string DataEmissao = "";
-
-
-
-
+                string DataEmissao ="";
+				
 
                 for (int i = 0; i <= RetornaElementoDoXml(retorno.ToString(), "Codigo").Count - 1; i++)
                 {
